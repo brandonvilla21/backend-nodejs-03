@@ -18,8 +18,8 @@ function obtenerPokemon(name) {
           data += stream;
         });
 
-        response.on('end', () => {
-          const body = JSON.parse(JSON.stringify(data));
+        response.on('end', (data) => {
+          const body = JSON.parse(data);
           resolve(body);
         });
 
